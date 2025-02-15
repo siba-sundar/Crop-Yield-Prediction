@@ -1,39 +1,65 @@
-# Crop Yield Prediction Model
+# Crop Yield Prediction
 
-## Description
-This project develops a **crop yield prediction model** using **machine learning** techniques. By analyzing historical data, weather patterns, and soil conditions, the model forecasts crop yields, helping farmers and stakeholders make informed decisions to optimize production and manage resources efficiently.
+## Problem Definition
 
-## Problem Statement
-With the global population increasing, **efficient agricultural practices** are crucial to ensuring food security. Crop yield prediction helps in **resource planning, reducing crop loss, and mitigating climate-related risks** by providing insights into how various factors influence crop production.
+The goal of this project is to develop a crop yield prediction model using machine learning techniques. The model will forecast crop yields based on historical data, weather patterns, and other relevant features.
+
+## Why This Problem?
+
+With an ever-growing global population, efficient agricultural practices are vital to meet the rising food demands. Crop yield prediction models support farmers and agricultural stakeholders by providing insights into future yields, helping in resource planning and management.
 
 ## Approach
-### 1. Data Collection & Preprocessing
-- Features: **Area, Item, Year, Yield (hg/ha), Rainfall (mm/year), Pesticide Usage (tonnes), Temperature**
-- Handling **missing values, duplicates,** and **scaling**
 
-### 2. Data Visualization
-- Graphs and **diagrams** to represent processed data insights
+To build the crop yield prediction model, the following approach was implemented:
 
-### 3. Model Selection
-Three machine learning models were implemented:
-1. **Linear Regression**
-2. **Decision Tree**
-3. **K-Nearest Neighbors (KNN)**
+1. **Data Collection and Preprocessing**:
+   - The dataset includes features such as Area, Item, Year, Yield (hg/ha), average rainfall (mm/year), pesticide usage (tonnes), and average temperature.
+   - Data was preprocessed to handle missing values, duplicates, and other inconsistencies.
 
-### 4. Model Training & Testing
-- **80-20 split** for training and testing
-- Models trained on the dataset and validated for accuracy
+2. **Data Visualization**:
+   - After data collection and preprocessing, the processed data was represented in the form of graphs and diagrams for better understanding.
 
-### 5. Evaluation
-- Metrics Used: **Mean Squared Error (MSE), Mean Absolute Error (MAE), R-squared (R²), Root Mean Squared Error (RMSE)**
-- Performance comparisons via **graphs**
+3. **Model Selection**:
+   - Three models were chosen for this task:
+     1. Linear Regression
+     2. Decision Tree
+     3. K-Nearest Neighbours (KNN)
 
-### 6. Prediction
-- Sample data passed through the models to generate predictions
+4. **Model Training and Testing**:
+   - The dataset was split into training and testing sets (80-20 split). The models were trained on the training set and validated on the test set to evaluate their performance.
 
-## Installation & Usage
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/crop-yield-prediction.git
-   cd crop-yield-prediction
+5. **Evaluation**:
+   - To measure the accuracy of the predictions, the following metrics were calculated: Mean Squared Error (MSE), Mean Absolute Error (MAE), R-squared (R²), and Root Mean Squared Error (RMSE).
 
+6. **Prediction**:
+   - After evaluation, sample data were passed to the three models, and predictions were made.
+
+## Data Collection and Preprocessing
+
+```python
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the dataset
+df = pd.read_csv('./yield_df.csv')
+
+# Display the first few rows of the dataset
+df.head()
+
+# Drop the S.No column
+df.drop('S.No', axis=1, inplace=True)
+
+# Check for null values
+print(df.isnull().sum())
+
+# Check for duplicate values and drop them
+df.drop_duplicates(inplace=True)
