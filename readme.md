@@ -76,8 +76,7 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Run the model:
-```bashpython main.py```
+
 
 Usage
 To use the crop yield prediction model, run the Jupyter notebook Project (crop yield prediction).ipynb. Follow the steps in the notebook to preprocess the data, train the models, and make predictions.
