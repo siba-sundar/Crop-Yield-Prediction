@@ -37,32 +37,3 @@ Three machine learning models were implemented:
    git clone https://github.com/your-username/crop-yield-prediction.git
    cd crop-yield-prediction
 
-
-
-Install dependencies:
-pip install -r requirements.txt
-
-Run the model:
-python main.py
-
-Results
-
-The best-performing model is identified based on evaluation metrics.
-
-Predictions help in optimizing agricultural planning.
-
-Future Enhancements
-
-Incorporate satellite imagery data for better accuracy
-
-Enhance model tuning using deep learning techniques
-
-Deploy as a web app for real-time use
-
-Contributing
-
-Contributions are welcome! Feel free to fork the repo and submit pull requests.
-
-License
-
-This project is licensed under the MIT License.
