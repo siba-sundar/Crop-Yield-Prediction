@@ -63,3 +63,27 @@ print(df.isnull().sum())
 
 # Check for duplicate values and drop them
 df.drop_duplicates(inplace=True)
+```
+
+## Installation & Usage
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/crop-yield-prediction.git
+   cd crop-yield-prediction
+
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+Run the model:
+```bashpython main.py```
+
+Usage
+To use the crop yield prediction model, run the Jupyter notebook Project (crop yield prediction).ipynb. Follow the steps in the notebook to preprocess the data, train the models, and make predictions.
+
+Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or new features.
+
+License
+This project is licensed under the MIT License.
